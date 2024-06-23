@@ -1,0 +1,36 @@
+@GraphQLAPI_HostAddress = http://localhost:5126
+
+## Rest API ##
+### Get Supplier By id ###
+GET {{GraphQLAPI_HostAddress}}/api/supplier
+
+### Get all Supplier ###
+GET {{GraphQLAPI_HostAddress}}/api/supplier/2
+
+## GraphQL API ##
+
+### Get all Supplier ###
+POST {{GraphQLAPI_HostAddress}}/graphQL
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+query {
+    allSuppliers{
+        id
+        firstName
+        lastName
+    }
+}
+
+### Get Supplier By id ###
+POST {{GraphQLAPI_HostAddress}}/graphQL
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+query {
+  supplierById(id:2){
+    firstName
+    address
+    phone
+  }
+}
