@@ -34,3 +34,26 @@ query {
     phone
   }
 }
+
+### Create Supplier ###
+POST {{GraphQLAPI_HostAddress}}/graphQL
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+mutation {
+  addSupplier(newSupplier: {
+    id: -1
+    firstName: "Faii"
+    lastName: "Kook"
+    address: "1234 Main St"
+    phone: "123-456-7890"
+    email: "faii@adc.com"
+  }) {
+    id
+    firstName
+    lastName
+    address
+    phone
+    email
+  }
+}

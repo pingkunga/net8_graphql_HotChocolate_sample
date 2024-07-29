@@ -19,6 +19,11 @@ public class SupplierService : ISupplierService
 
     public async Task<SupplierDTO> GetSupplier(int id)
     {
-            return await _supplierRepository.GetSupplier(id);
+        return await _supplierRepository.GetSupplier(id);
+    }
+
+    public async Task<SupplierDTO> AddSupplier(SupplierDTO supplier)
+    {
+        return await _supplierRepository.AddSupplier(supplier);
     }
 }

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class SupplierRepository: ISupplierRepository
 {
-    private readonly IEnumerable <SupplierDTO> suppliers = new List <SupplierDTO>
+    private IList<SupplierDTO> suppliers = new List <SupplierDTO>
     {
         new SupplierDTO
         {
@@ -38,12 +38,18 @@ public class SupplierRepository: ISupplierRepository
 
     public async Task <IEnumerable <SupplierDTO>> GetSuppliers()
     {
-        return await 
-        Task.FromResult(suppliers);
+        return await Task.FromResult(suppliers);
     }
 
     public async Task <SupplierDTO> GetSupplier(int Id)
     {
         return await Task.FromResult(suppliers.FirstOrDefault(x => x.Id == Id));
     }
-  }
+
+    public async Task <SupplierDTO> AddSupplier(SupplierDTO supplier)
+    {
+        suppliers.Add(supplier);
+        return await Task.FromResult(supplier);
+    }
+    
+}

@@ -1,3 +1,4 @@
+using GraphQLAPI.GraphQL.Mutation;
 using GraphQLAPI.GraphQL.Query;
 using GraphQLAPI.GraphQL.Type;
 using GraphQLAPI.Infra.Repositories;
@@ -22,7 +23,9 @@ builder.Services.AddScoped<ISupplierService, SupplierService>();
 
 builder.Services.AddGraphQLServer()
                 .AddType<SupplierType>()
-                .AddQueryType<SupplierGraphQLQuery>();
+                .AddQueryType<SupplierGraphQLQuery>()
+                .AddMutationType<SupplierGraphQLMutation>(); // Register the mutation type
+
 
 var app = builder.Build();
 
