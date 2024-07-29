@@ -1,4 +1,4 @@
-using GraphQLAPI.Infra.Models;
+using GraphQLAPI.DTOs;
 
 namespace GraphQLAPI.Infra.Repositories
 {

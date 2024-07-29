@@ -1,6 +1,6 @@
 namespace GraphQLAPI.Services;
 
-using GraphQLAPI.Infra.Models;
+using GraphQLAPI.DTOs;
 using GraphQLAPI.Infra.Repositories;
 
 public class SupplierService : ISupplierService

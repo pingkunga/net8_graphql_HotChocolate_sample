@@ -1,4 +1,4 @@
-using GraphQLAPI.Infra.Models;
+using GraphQLAPI.DTOs;
 using GraphQLAPI.Services;
 
 namespace GraphQLAPI.GraphQL.Query

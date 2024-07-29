@@ -1,6 +1,6 @@
 namespace GraphQLAPI.Services;
 
-using GraphQLAPI.Infra.Models;
+using GraphQLAPI.DTOs;
 
 public interface ISupplierService
 {
