@@ -1,4 +1,4 @@
-namespace GraphQLAPI.Infra.Models
+namespace GraphQLAPI.DTOs
 {
     public class SupplierDTO
     {
