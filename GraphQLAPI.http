@@ -107,11 +107,12 @@ mutation {
   }
 }
 
-### Delete Supplier ###
+### Delete Supplier (true-deleted / false-not found)###
 POST {{GraphQLAPI_HostAddress}}/graphQL
 Content-Type: application/json
 X-REQUEST-TYPE: GraphQL
 
 mutation {
-  deleteSupplier(id: 30002)
+  deleteSupplier(id: 30003
+)
 }
