@@ -42,7 +42,6 @@ X-REQUEST-TYPE: GraphQL
 
 mutation {
   addSupplier(newSupplier: {
-    id: -1
     firstName: "Faii"
     lastName: "Kook"
     address: "1234 Main St"
@@ -56,4 +55,63 @@ mutation {
     phone
     email
   }
+}
+
+### Update Supplier ###
+POST {{GraphQLAPI_HostAddress}}/graphQL
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+mutation {
+  updateSupplier(
+   id: 30002,
+   supplier: {
+    id: 30002
+    firstName: "Faii"
+    lastName: "Faii"
+    address: "1234 Main St"
+    phone: "123-456-7890"
+    email: "faii@adc.com"
+  }) {
+    id
+    firstName
+    lastName
+    address
+    phone
+    email
+  }
+}
+
+### Update Supplier Id Not Exist ###
+POST {{GraphQLAPI_HostAddress}}/graphQL
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+mutation {
+  updateSupplier(
+   id: 99999,
+   supplier: {
+    id: 99999
+    firstName: "Faii"
+    lastName: "Faii"
+    address: "1234 Main St"
+    phone: "123-456-7890"
+    email: "faii@adc.com"
+  }) {
+    id
+    firstName
+    lastName
+    address
+    phone
+    email
+  }
+}
+
+### Delete Supplier ###
+POST {{GraphQLAPI_HostAddress}}/graphQL
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+mutation {
+  deleteSupplier(id: 30002)
 }
