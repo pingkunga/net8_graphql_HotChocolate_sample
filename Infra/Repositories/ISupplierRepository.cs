@@ -7,8 +7,8 @@ namespace GraphQLAPI.Infra.Repositories
         Task<IEnumerable<SupplierDTO>> GetSuppliers();
         Task<SupplierDTO> GetSupplier(int id);
         Task<SupplierDTO> AddSupplier(SupplierDTO supplier);
-        // Task<SupplierDTO> UpdateSupplier(Supplier supplier);
-        // Task<SupplierDTO> DeleteSupplier(int id);
+        Task<SupplierDTO> UpdateSupplier(int Id, SupplierDTO supplier);
+        Task<bool> DeleteSupplier(int id);
     }
 
 }

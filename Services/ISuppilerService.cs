@@ -6,5 +6,7 @@ public interface ISupplierService
 {
     Task<IEnumerable<SupplierDTO>> GetSuppliers();
     Task<SupplierDTO> GetSupplier(int id);
-    Task<SupplierDTO> AddSupplier(SupplierDTO supplier);
+    Task<SupplierDTO> AddSupplier(SuppilerCreateDTO supplier);
+    Task<SupplierDTO> UpdateSupplier(int id, SupplierDTO supplier);
+    Task<bool> DeleteSupplier(int id);
 }
