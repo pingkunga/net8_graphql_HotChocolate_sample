@@ -1,58 +1,21 @@
-dotnet new webapi --use-controllers -o GraphQLAPI
+# Sample dotnet graphql api with TiDB
 
-dotnet add package HotChocolate.AspNetCore
-dotnet add package HotChocolate.AspNetCore.Playground
+This project is a sample graphql api with HotChocolate. you can see change in branch
+* feature/query_sample - select data by graphql
+* feature/mutation_sample - create update delete data by graphql
 
+you can see example call in file [GraphQLAPI.http](./GraphQLAPI.http)
 
-query {
-    allSuppliers{
-        id
-        firstName
-        lastName
-    }
-}
-
-query {
-  supplierById(id:1){
-    firstName
-    address
-    phone
-  }
-}
-
-# TiDB + MySQL Connector
-
-* package
+# Run 
 
 ```
-dotnet add package Microsoft.EntityFrameworkCore
-dotnet add package Microsoft.EntityFrameworkCore.Tools
-dotnet add package Pomelo.EntityFrameworkCore.MySql
-
-Note: 
-MySql.EntityFrameworkCore
-//Ref: https://dev.mysql.com/doc/connector-net/en/connector-net-entityframework-core-example.html
+dotnet run GraphQLAPI.csproj
 ```
 
-* Schema 
+# Blog
 
-- Add field or Entity Run 
+* [[DOTNET] GraphQL บน NET8 ด้วย HotChocolate Library #01 (Query)
+](https://naiwaen.debuggingsoft.com/2024/07/dotnet-graphql-net8-with-hotchocolate-library-part1-query/)
+* [[DOTNET] GraphQL บน NET8 ด้วย HotChocolate Library #02 (Mutation) + TiDB
+](https://naiwaen.debuggingsoft.com/2024/09/dotnet-graphql-net8-with-hotchocolate-library-part2-mutation-with-tidb/)
 
-```
-dotnet ef migrations add intial 
-```
-
-- List
-```
-List out pending migrations
-dotnet ef migrations list --project .\GraphQLAPI.csproj
-
-Update database with pending migrations
-dotnet ef database update --project .\GraphQLAPI.csproj
-```
-
-# Automapper
-
-```
-dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection
-```
